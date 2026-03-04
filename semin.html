@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semin Achankunju</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+       
+        :root {
+            --font-sans: 'Inter', system-ui, sans-serif;
+        }
+       
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 70%);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+       
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+        .nav-link {
+            position: relative;
+        }
+       
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+       
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 font-sans antialiased">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <span class="heading-font text-2xl font-semibold tracking-tighter">Semin Achankunju</span>
+            </div>
+           
+            <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                <a href="#about" class="nav-link text-zinc-400 hover:text-white transition-colors">About</a>
+                <a href="#projects" class="nav-link text-zinc-400 hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="nav-link text-zinc-400 hover:text-white transition-colors">Skills</a>
+                <a href="#achievements" class="nav-link text-zinc-400 hover:text-white transition-colors">Achievements</a>
+                <a href="#contact" class="nav-link text-zinc-400 hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-x-3">
+                <a href="https://github.com/smnachankunju" target="_blank"
+                   class="flex items-center gap-x-2 px-5 py-2.5 bg-white text-black rounded-full text-sm font-semibold hover:bg-zinc-200 transition-colors">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/semin-achankunju-2536582ba" target="_blank"
+                   class="flex items-center gap-x-2 px-5 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-full text-sm font-semibold transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <button onclick="toggleMobileMenu()"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+       
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-zinc-950 z-50 pt-20 px-8">
+            <div class="flex flex-col gap-y-8 text-2xl font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="nav-link">Projects</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="nav-link">Skills</a>
+                <a href="#achievements" onclick="toggleMobileMenu()" class="nav-link">Achievements</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-screen-2xl mx-auto px-8 max-w-3xl">
+            <div class="space-y-8 text-center md:text-left">
+                <div class="inline-flex items-center gap-x-3 px-5 py-2 rounded-3xl border border-zinc-700 text-sm mx-auto md:mx-0">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="uppercase tracking-[3px] text-zinc-400">Pathanamthitta, Kerala, India</span>
+                </div>
+               
+                <h1 class="heading-font text-7xl md:text-8xl font-semibold tracking-tighter leading-none">
+                    Semin Achankunju
+                </h1>
+               
+                <p class="text-2xl md:text-3xl text-zinc-400">
+                    Second-year B.Tech CSE student passionate about cybersecurity. Focused on offensive & defensive security, web vulnerability scanning, cryptography implementation, network packet analysis, privacy-preserving tools, and Active Directory security.
+                </p>
+               
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#projects"
+                       class="px-8 py-4 bg-white text-black rounded-2xl font-semibold flex items-center gap-x-3 group">
+                        View All Projects
+                        <span class="group-hover:translate-x-1 transition">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-2 text-zinc-500">
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-zinc-500 to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32 border-t border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-20">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <h2 class="heading-font text-6xl font-semibold tracking-tighter mt-3 leading-none">CyberSecurity Developer</h2>
+                    </div>
+                </div>
+                <div class="md:col-span-7 text-lg text-zinc-300 leading-relaxed space-y-8">
+                    <p class="max-w-prose">
+                        Second-year B.Tech student in Computer Science and Engineering at Amrita Vishwa Vidyapeetham, Amritapuri. 
+                        Cybersecurity-focused developer with hands-on experience in building practical security tools, vulnerability scanning, cryptographic implementations, network analysis, and Active Directory management.
+                        Strong emphasis on secure coding practices, privacy-preserving techniques, and offensive security methodologies.
+                        Proficient in Python for security tooling, web scraping/analysis, and cryptography experiments.
+                    </p>
+                    <div class="pt-8 border-t border-zinc-800 grid md:grid-cols-2 gap-12 text-sm">
+                        <div>
+                            <div class="font-mono text-emerald-400 mb-3">CURRENT INTERESTS</div>
+                            <div class="space-y-4 text-zinc-400">
+                                <div class="flex gap-3"><span class="text-white">→</span> Web Application Security & Vulnerability Scanning</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Offensive Security & Pentesting</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Cryptography & Secure Implementations (AES, Classical Ciphers)</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Network Packet Analysis & Wireshark Tooling</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Privacy-Preserving Technologies (k-anonymity, hashing)</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Active Directory Security & Management</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Multi-Agent Defensive Systems & Cyber Defense</div>
+                                <div class="flex gap-3"><span class="text-white">→</span> Secure Tool Development in Python</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-mono text-emerald-400 mb-3">BASED IN</div>
+                            <div class="text-white">Pathanamthitta, Kerala, India</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-32">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="heading-font text-6xl font-semibold tracking-tighter">All Projects</h2>
+                </div>
+            </div>
+           
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">2026 • Collaborative Project</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">SwarmShield — Multi-Agent Anticipatory Network Defense System</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Collaborated on closed-loop self-evolving cyber defense using CrewAI agents, genetic adaptation, attack-graph simulation, and autonomous firewall actions. Built under time constraints.</p>
+                    <a href="https://github.com/ima-a/Swarm-Shield" target="_blank" class="mt-6 text-xs text-emerald-400 hover:text-white inline-flex items-center gap-x-2">Repository →</a>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">Internship Project • 2025–2026</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Dynamic Application Security Testing (DAST) Tool</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Black-box web vulnerability scanner detecting SQL Injection & Reflected XSS. Modular crawler with BeautifulSoup4 + Requests; custom payload injection, heuristic detection, and HTML audit reports with severity levels.</p>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">Internship Project • 2025–2026</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Privacy-Preserving Password Breach Analyzer</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Local k-anonymity breach detection using SHA-1 hashing. Ensures no plaintext passwords or full hashes leave the device; privacy-first architecture.</p>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">2025–2026</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Malicious Packet Analyzer with Wireshark Integration</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Tool for capturing, filtering, and analyzing suspicious network traffic using Wireshark APIs and Python scripting. Focus on identifying anomalies, protocol misuse, and potential C2 communication.</p>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">2025–2026</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Cryptography Toolkit — Multi-Cipher Suite</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Python-based tool combining classical (Caesar, Vigenère) and modern (AES) ciphers with key management, file encryption/decryption, and basic cryptanalysis helpers.</p>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">2025–2026 • Active Directory</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Active Directory Management & Security Lab</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Scripts to create Organizational Units (OU/sub-OU), users, groups, and passwords. Configured for remote login testing and privilege escalation simulations in lab environments.</p>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card-hover group">
+                    <div class="text-xs text-emerald-400 mb-3">2025</div>
+                    <h3 class="heading-font text-xl font-semibold mb-4">Web Scraper & OSINT Tool using BeautifulSoup</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Targeted web scraper for extracting structured data from public sources. Used in reconnaissance phase of security assessments and CTF challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-32 bg-zinc-900 border-t border-b border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-6xl font-semibold tracking-tighter mt-3">Skills & Certifications</h2>
+            </div>
+           
+            <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="font-medium text-emerald-400 mb-4">Languages</h3>
+                        <div class="text-zinc-400">Python, C, Java</div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-emerald-400 mb-4">Security & Tools</h3>
+                        <div class="text-zinc-400">Wireshark, Burp Suite, Metasploit, Nmap, Active Directory, CTF tooling</div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-emerald-400 mb-4">Libraries & Frameworks</h3>
+                        <div class="text-zinc-400">BeautifulSoup4, Requests, Cryptography (pycryptodome), Hashlib, Scapy (packet crafting)</div>
+                    </div>
+                </div>
+               
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="font-medium text-emerald-400 mb-4">Technical Skills</h3>
+                        <div class="text-zinc-400">Web Vulnerability Scanning (SQLi, XSS), Cryptography Implementation, Network Analysis, Pentesting Basics, Secure Scripting, OSINT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="py-32">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="heading-font text-6xl font-semibold tracking-tighter mt-3 mb-16">Achievements & Activities</h2>
+               
+                <div class="space-y-16">
+                    <div>
+                        <div class="text-emerald-400 text-sm mb-4">HACKATHON ACHIEVEMENTS</div>
+                        <div class="pl-6 border-l border-zinc-800 space-y-8">
+                            <div>
+                                <div class="font-medium">Hack-A-League 4.0 — 11th Place out of 150 teams (Feb 2026)</div>
+                                <div class="text-zinc-400 text-sm">Developed SwarmShield multi-agent cyber defense system.</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <div class="text-emerald-400 text-sm mb-4">ACTIVITIES</div>
+                        <div class="pl-6 border-l border-zinc-800 space-y-8">
+                            <div>
+                                <div class="font-medium">Mentor and Member, ACM SIG CYBER – Amrita Student Chapter (February 2025 – Present)</div>
+                                <div class="text-zinc-400 text-sm">Participating in CTFs, OSINT challenges, forensics exercises, and cybersecurity workshops.</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <div class="text-emerald-400 text-sm mb-4">INTERNSHIP & PROJECT HIGHLIGHTS</div>
+                        <div class="pl-6 border-l border-zinc-800 space-y-8">
+                            <div>
+                                <div class="font-medium">Security Internship — Built DAST Scanner & Privacy Tool</div>
+                                <div class="text-zinc-400 text-sm">Developed production-grade vulnerability scanner and privacy-preserving breach checker with focus on false-positive reduction and secure design.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-32 bg-zinc-900">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <div class="max-w-md mx-auto">
+                <h2 class="heading-font text-6xl font-semibold tracking-tighter mt-3 mb-8">Let's Connect</h2>
+                <p class="text-zinc-400 mb-12">Open to collaborations.</p>
+               
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 space-y-8">
+                    <a href="mailto:semin@example.com" class="block text-2xl font-medium hover:text-white transition">seminachankunju@gmail.com</a>
+                    <a href="tel:+91XXXXXXXXXX" class="block text-xl text-zinc-400 hover:text-white transition">+91 8078353825</a>
+                   
+                    <div class="flex justify-center gap-x-8 text-4xl pt-6">
+                        <a href="https://github.com/smnachankunju" target="_blank" class="text-zinc-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/semin-achankunju-2536582ba" target="_blank" class="text-zinc-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 text-xs text-zinc-500 flex flex-col md:flex-row justify-between items-center gap-y-4">
+            <div>© 2026 Semin Achankunju. All rights reserved.</div>
+            <div class="text-emerald-400/70 text-[10px] font-mono tracking-widest">HOSTED ON GITHUB PAGES</div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden')
+        }
+    </script>
+</body>
+</html>
